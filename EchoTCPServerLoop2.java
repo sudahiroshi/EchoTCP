@@ -24,8 +24,8 @@ public class EchoTCPServerLoop2 {
 					msg = br.readLine();
 					System.out.println( msg );
 					bw.write( msg + "\r\n" );
+					bw.flush();
 				} while( msg.compareTo( "end" ) != 0 );
-				bw.flush();
 				bw.close();
 				br.close();
 				osw.close();
